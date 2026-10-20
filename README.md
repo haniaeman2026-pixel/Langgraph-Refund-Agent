@@ -1,12 +1,15 @@
- <div align="center">
+
+<div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:171717,50:30291F,100:171717&height=200&section=header&text=LANGGRAPH%20REFUND%20WORKFLOW&fontSize=30&fontColor=E8D3A4&fontAlignY=43&desc=Intelligent%20Customer%20Support%20%7C%20AI%20Refund%20Automation&descSize=13&descColor=F5F0E6&descAlignY=65" width="100%" alt="LangGraph Refund Workflow"/>
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=21&pause=1600&color=C7A96B&center=true&vCenter=true&width=650&lines=AI-Powered+Customer+Support;Structured+Refund+Decision+Workflow;Human-in-the-Loop+Review" alt="Animated introduction"/>
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=21&pause=1600&color=C7A96B&center=true&vCenter=true&width=650&lines=AI-Powered+Customer+Support;Structured+Refund+Decision+Workflow;Human-in-the-Loop+Review" alt="Animated project introduction"/>
 
-**A streamlined AI workflow for customer support, order classification, and refund decision management.**
+<br/>
+
+**An intelligent workflow for customer support, order classification, and refund decision management.**
 
 <br/>
 
@@ -21,18 +24,18 @@
 
 ## Project Overview
 
-LangGraph Refund Workflow is an AI-powered customer support application designed to classify incoming requests, identify order information, and coordinate refund-related decisions through a structured LangGraph workflow.
+LangGraph Refund Workflow is an AI-powered customer support application that classifies incoming requests, checks available order information, and coordinates refund-related decisions through a structured LangGraph workflow.
 
-The application combines a FastAPI backend with an interactive web interface and human review for requests that require approval.
+The application combines a FastAPI backend, an interactive web interface, and human review for requests that require approval.
 
-## Core Capabilities
+## Core Features
 
-- **Request Classification** — Categorizes customer support messages.
-- **Order Lookup** — Identifies order IDs and checks available order records.
-- **Refund Decisions** — Routes requests through the configured workflow.
-- **Human Review** — Supports approval or rejection of pending requests.
-- **AI-Generated Responses** — Produces concise, customer-friendly replies.
-- **API Monitoring** — Includes a health endpoint and interactive API documentation.
+- **Request Classification** — Categorizes incoming customer support messages.
+- **Order Lookup** — Extracts order IDs and checks available order records.
+- **Refund Decision Workflow** — Routes requests through the configured decision process.
+- **Human-in-the-Loop Review** — Supports approval or rejection of requests awaiting review.
+- **AI-Generated Responses** — Generates customer-friendly support replies.
+- **API Health Check** — Provides a health endpoint and interactive API documentation.
 
 ## Screenshots
 
@@ -42,99 +45,99 @@ The application combines a FastAPI backend with an interactive web interface and
 
 <img src="screenshots/home.png" width="92%" alt="Main application interface"/>
 
-*Main interface and application layout*
+<sub>Main interface and application layout</sub>
 
-<br/>
+<br/><br/>
 
-### Customer Support
+### Customer Support Workflow
 
 <img src="screenshots/support.png" width="92%" alt="Customer support workflow"/>
 
-*Customer request and AI response*
+<sub>Customer request and AI-generated response</sub>
 
-<br/>
+<br/><br/>
 
 ### Human Review
 
 <img src="screenshots/human-review.png" width="92%" alt="Human review interface"/>
 
-*Refund approval and rejection interface*
+<sub>Refund approval and rejection interface</sub>
 
 </div>
 
-## Technology
+---
+
+## Technology Stack
 
 | Component | Technology |
 |---|---|
-| Language | Python |
-| API Framework | FastAPI |
+| Programming Language | Python |
+| Backend Framework | FastAPI |
 | Workflow Orchestration | LangGraph |
 | Language Model Provider | Groq |
 | Frontend | HTML, CSS, JavaScript |
 
-## Getting Started
+---
 
-**1. Clone the repository**
+## Installation and Setup
+
+### 1. Clone the repository
+
+Replace `YOUR-USERNAME` with your GitHub username.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/LangGraph-Refund-Workflow.git
 cd LangGraph-Refund-Workflow
 ```
 
-**2. Create and activate a virtual environment**
+### 2. Create a virtual environment
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-**3. Install dependencies**
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Configure `.env`**
+### 4. Configure environment variables
+
+Create a `.env` file in the location expected by your application:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
 GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-Keep your real API key private. Do not commit `.env` to GitHub.
+Keep your real API key private. Never upload your `.env` file to GitHub.
 
-**5. Run the application**
+### 5. Start the application
 
 ```bash
 python -m uvicorn main:app --reload
 ```
 
-Open `http://127.0.0.1:8000` to access the application.
+Open the following URLs in your browser:
 
-API health: `http://127.0.0.1:8000/health`
-
-API documentation: `http://127.0.0.1:8000/docs`
-
----
-
+- **Application:** http://127.0.0.1:8000
+- **Health Check:** http://127.0.0.1:8000/health
+- **API Documentation:** http://127.0.0.1:8000/docs
 
 ---
 
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=1B1A18&height=140&section=footer&text=Developed%20by%20Hania%20Eman&fontSize=32&fontColor=E8D4A2&animation=fadeIn&fontAlignY=50" width="100%" alt="Developed by Hania Eman" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:171717,50:30291F,100:171717&height=150&section=footer&text=Developed%20by%20Hania%20Eman&fontSize=30&fontColor=E8D3A4&fontAlignY=48&animation=fadeIn" width="100%" alt="Developed by Hania Eman"/>
 
-  <p>
-    <strong>LangGraph Refund Workflow</strong>
-  </p>
+<br/>
 
-  <p>
-    Intelligent Customer Support | AI Refund Automation
-  </p>
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=17&pause=1800&color=C7A96B&center=true&vCenter=true&width=650&lines=AI+%26+Data+Science;Python+%7C+FastAPI+%7C+LangGraph;Building+Intelligent+Applications" alt="Developer specialties"/>
 
-</div>
+**LangGraph Refund Workflow**
 
-
-*Artificial Intelligence · Intelligent Applications · Python Development*
+<sub>Intelligent Customer Support · AI Refund Automation</sub>
 
 </div>
