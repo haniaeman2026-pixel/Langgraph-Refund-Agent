@@ -1,144 +1,128 @@
  <div align="center">
 
-# ✨ LangGraph Refund Workflow
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:171717,50:30291F,100:171717&height=200&section=header&text=LANGGRAPH%20REFUND%20WORKFLOW&fontSize=30&fontColor=E8D3A4&fontAlignY=43&desc=Intelligent%20Customer%20Support%20%7C%20AI%20Refund%20Automation&descSize=13&descColor=F5F0E6&descAlignY=65" width="100%" alt="LangGraph Refund Workflow"/>
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=D6B77A&center=true&vCenter=true&width=600&lines=AI-Powered+Customer+Support;Intelligent+Refund+Workflow;Human-in-the-Loop+Approval" alt="Animated project introduction" />
-</a>
+<br/>
 
-**An AI-powered customer support and refund workflow built with LangGraph, FastAPI, and Groq.**
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=21&pause=1600&color=C7A96B&center=true&vCenter=true&width=650&lines=AI-Powered+Customer+Support;Structured+Refund+Decision+Workflow;Human-in-the-Loop+Review" alt="Animated introduction"/>
 
-[Features](#-features) · [Screenshots](#-screenshots) · [Installation](#-installation) · [Usage](#-usage)
+**A streamlined AI workflow for customer support, order classification, and refund decision management.**
+
+<br/>
+
+![Python](https://img.shields.io/badge/Python-242424?style=flat-square&logo=python&logoColor=E8D3A4)
+![FastAPI](https://img.shields.io/badge/FastAPI-242424?style=flat-square&logo=fastapi&logoColor=91D5B5)
+![LangGraph](https://img.shields.io/badge/LangGraph-242424?style=flat-square&logoColor=E8D3A4)
+![Groq](https://img.shields.io/badge/Groq-242424?style=flat-square&logoColor=E8D3A4)
 
 </div>
 
 ---
 
-## 🚀 Overview
+## Project Overview
 
-LangGraph Refund Workflow is an AI-powered application that processes customer support requests, classifies customer intent, checks order information, and manages refund decisions through a structured workflow.
+LangGraph Refund Workflow is an AI-powered customer support application designed to classify incoming requests, identify order information, and coordinate refund-related decisions through a structured LangGraph workflow.
 
-It includes human-in-the-loop review for requests that require approval, along with a web interface for interacting with the system.
+The application combines a FastAPI backend with an interactive web interface and human review for requests that require approval.
 
-## ✨ Features
+## Core Capabilities
 
-- **AI Request Classification** — Understands customer support requests.
-- **Order Identification** — Extracts order IDs from customer messages.
-- **Refund Workflow** — Processes requests through defined workflow steps.
+- **Request Classification** — Categorizes customer support messages.
+- **Order Lookup** — Identifies order IDs and checks available order records.
+- **Refund Decisions** — Routes requests through the configured workflow.
 - **Human Review** — Supports approval or rejection of pending requests.
-- **Interactive Web UI** — Provides a clean interface for submitting requests.
-- **Health Monitoring** — Checks backend connectivity.
-- **API Documentation** — Explore endpoints through FastAPI Swagger UI.
+- **AI-Generated Responses** — Produces concise, customer-friendly replies.
+- **API Monitoring** — Includes a health endpoint and interactive API documentation.
 
-## 🛠️ Tech Stack
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square)
-![Groq](https://img.shields.io/badge/Groq-AI-orange?style=flat-square)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
-## 📸 Screenshots
-
-Add your actual project screenshots to the `screenshots/` folder and display them here.
+## Screenshots
 
 <div align="center">
 
 ### Application Interface
 
-<img src="screenshots/home.png" alt="Application home page" width="850" />
+<img src="screenshots/home.png" width="92%" alt="Main application interface"/>
 
-### Customer Support Workflow
+*Main interface and application layout*
 
-<img src="screenshots/support.png" alt="Customer support workflow" width="850" />
+<br/>
+
+### Customer Support
+
+<img src="screenshots/support.png" width="92%" alt="Customer support workflow"/>
+
+*Customer request and AI response*
+
+<br/>
 
 ### Human Review
 
-<img src="screenshots/human-review.png" alt="Human approval and rejection interface" width="850" />
+<img src="screenshots/human-review.png" width="92%" alt="Human review interface"/>
+
+*Refund approval and rejection interface*
 
 </div>
 
-## ⚙️ Installation
+## Technology
 
-### 1. Clone the repository
+| Component | Technology |
+|---|---|
+| Language | Python |
+| API Framework | FastAPI |
+| Workflow Orchestration | LangGraph |
+| Language Model Provider | Groq |
+| Frontend | HTML, CSS, JavaScript |
+
+## Getting Started
+
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/LangGraph-Refund-Workflow.git
 cd LangGraph-Refund-Workflow
 ```
 
-### 2. Create a virtual environment
-
-**Windows:**
+**2. Create and activate a virtual environment**
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 3. Install dependencies
+**3. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure environment variables
-
-Create a `.env` file in the project root:
+**4. Configure `.env`**
 
 ```env
 GROQ_API_KEY=your_groq_api_key
 GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-Replace the placeholder with your own Groq API key. Never commit your `.env` file or expose your API key publicly.
+Keep your real API key private. Do not commit `.env` to GitHub.
 
-## ▶️ Usage
-
-Start the application from the project directory:
+**5. Run the application**
 
 ```bash
 python -m uvicorn main:app --reload
 ```
 
-Open the following URLs in your browser:
+Open `http://127.0.0.1:8000` to access the application.
 
-| Service | URL |
-|---|---|
-| Web Application | http://127.0.0.1:8000 |
-| API Health | http://127.0.0.1:8000/health |
-| Swagger Documentation | http://127.0.0.1:8000/docs |
+API health: `http://127.0.0.1:8000/health`
 
-Submit a customer request, review the workflow response, and use the Human Review interface when a request is awaiting approval.
-
-## 🔐 Security
-
-- Keep API keys in environment variables.
-- Exclude `.env` and `.venv/` from version control.
-- Never publish private credentials or sensitive customer information.
-
-## 👩‍💻 Developer
-
-<div align="center">
-
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=D6B77A&center=true&vCenter=true&width=450&lines=Developed+by+Haneeman+%E2%9C%A8;AI+%26+Data+Science+Enthusiast" alt="Developed by Haneeman" />
-</a>
-
-**Haneeman**
-
-*Building intelligent applications with AI.*
-
-</div>
+API documentation: `http://127.0.0.1:8000/docs`
 
 ---
 
 <div align="center">
 
-⭐ If you find this project interesting, consider giving it a star!
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:171717,100:30291F&height=3&section=footer" width="100%" alt=""/>
 
-**LangGraph Refund Workflow · Built with AI**
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=25&pause=1800&color=C7A96B&center=true&vCenter=true&width=500&lines=Developed+by+Hania+Eman" alt="Developed by Hania Eman"/>
+
+*Artificial Intelligence · Intelligent Applications · Python Development*
 
 </div>
