@@ -117,11 +117,23 @@ API documentation: `http://127.0.0.1:8000/docs`
 
 ---
 
+
+---
+
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:171717,100:30291F&height=3&section=footer" width="100%" alt=""/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=1B1A18&height=140&section=footer&text=Developed%20by%20Hania%20Eman&fontSize=32&fontColor=E8D4A2&animation=fadeIn&fontAlignY=50" width="100%" alt="Developed by Hania Eman" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=500&size=25&pause=1800&color=C7A96B&center=true&vCenter=true&width=500&lines=Developed+by+Hania+Eman" alt="Developed by Hania Eman"/>
+  <p>
+    <strong>LangGraph Refund Workflow</strong>
+  </p>
+
+  <p>
+    Intelligent Customer Support | AI Refund Automation
+  </p>
+
+</div>
+
 
 *Artificial Intelligence · Intelligent Applications · Python Development*
 
