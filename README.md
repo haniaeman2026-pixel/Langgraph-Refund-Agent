@@ -37,33 +37,6 @@ The application combines a FastAPI backend, an interactive web interface, and hu
 - **AI-Generated Responses** — Generates customer-friendly support replies.
 - **API Health Check** — Provides a health endpoint and interactive API documentation.
 
-## Screenshots
-
-<div align="center">
-
-### Application Interface
-
-<img src="screenshots/home.png" width="92%" alt="Main application interface"/>
-
-<sub>Main interface and application layout</sub>
-
-<br/><br/>
-
-### Customer Support Workflow
-
-<img src="screenshots/support.png" width="92%" alt="Customer support workflow"/>
-
-<sub>Customer request and AI-generated response</sub>
-
-<br/><br/>
-
-### Human Review
-
-<img src="screenshots/human-review.png" width="92%" alt="Human review interface"/>
-
-<sub>Refund approval and rejection interface</sub>
-
-</div>
 
 ---
 
