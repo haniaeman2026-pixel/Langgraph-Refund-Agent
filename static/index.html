@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#202522" />
+  <title>RefundFlow AI | Support Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a href="#overview" class="brand">
+        <span class="brand-mark">R</span>
+        <span>
+          <strong>RefundFlow AI</strong>
+          <small>Support Intelligence</small>
+        </span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-link active" data-view="overview">
+          <span class="nav-icon">⌂</span> Overview
+        </button>
+        <button class="nav-link" data-view="new-request">
+          <span class="nav-icon">＋</span> New Request
+        </button>
+        <button class="nav-link" data-view="human-review">
+          <span class="nav-icon">◇</span> Human Review
+          <span class="nav-count" id="reviewBadge">—</span>
+        </button>
+        <button class="nav-link" data-view="history">
+          <span class="nav-icon">◷</span> Refund History
+        </button>
+      </nav>
+
+      <div class="nav-label system-label">SYSTEM</div>
+      <nav class="nav-menu" aria-label="System navigation">
+        <button class="nav-link" data-view="api-health">
+          <span class="nav-icon">⌁</span> API Health
+        </button>
+        <a class="nav-link" href="/docs" target="_blank" rel="noreferrer">
+          <span class="nav-icon">▤</span> API Documentation ↗
+        </a>
+      </nav>
+
+      <div class="sidebar-status">
+        <div class="status-title">
+          <span class="status-symbol">✳</span>
+          AI-Powered Support
+        </div>
+        <p>LangGraph workflow with policy checks and human approval.</p>
+        <span class="status-pill"><i></i><span id="sidebarApiStatus">Checking API…</span></span>
+      </div>
+
+      <div class="sidebar-footer">
+        <span>RefundFlow AI</span>
+        <span>v1.0.0</span>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+        <div>
+          <div class="topbar-title">Refund Operations</div>
+          <div class="topbar-subtitle">AI Support Control Center</div>
+        </div>
+        <div class="topbar-right">
+          <span class="environment"><i></i> Local Environment</span>
+          <span class="avatar">A</span>
+          <span class="admin-label">Admin Workspace</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="welcome-banner">
+          <div class="banner-copy">
+            <span class="eyebrow">WELCOME TO YOUR WORKSPACE</span>
+            <h1>Good day, Support Team <span aria-hidden="true">✦</span></h1>
+            <p>Manage customer requests and review workflow decisions.</p>
+          </div>
+          <div class="banner-note">Smarter support.<br>Faster resolutions.</div>
+          <div class="banner-orb orb-one"></div>
+          <div class="banner-orb orb-two"></div>
+        </section>
+
+        <section class="stats-grid" aria-label="Dashboard metrics">
+          <article class="stat-card">
+            <div class="stat-icon icon-green">⌁</div>
+            <div class="stat-copy">
+              <span class="stat-label">API STATUS</span>
+              <strong id="apiStat">Checking…</strong>
+              <small id="apiStatNote">FastAPI health endpoint</small>
+              <span class="mini-badge green-badge" id="apiBadge">Connecting</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-blue">▤</div>
+            <div class="stat-copy">
+              <span class="stat-label">TOTAL REQUESTS</span>
+              <strong id="totalRequests">0</strong>
+              <small>Submitted in this session</small>
+              <span class="mini-badge blue-badge">Session activity</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-gold">◷</div>
+            <div class="stat-copy">
+              <span class="stat-label">PENDING REVIEWS</span>
+              <strong id="pendingReviews">—</strong>
+              <small>Requires human attention</small>
+              <span class="mini-badge gold-badge">Review queue</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-purple">✓</div>
+            <div class="stat-copy">
+              <span class="stat-label">COMPLETED</span>
+              <strong id="completedRequests">0</strong>
+              <small>Finished in this session</small>
+              <span class="mini-badge purple-badge">Workflow results</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="workspace-grid">
+          <article class="panel request-panel" id="requestPanel">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-title"><span class="heading-icon">✉</span> New Customer Request</div>
+                <p>Enter a customer message to start the LangGraph workflow.</p>
+              </div>
+              <span class="endpoint-tag">POST /support</span>
+            </div>
+
+            <form id="supportForm">
+              <label for="threadId">Thread ID</label>
+              <div class="input-with-action">
+                <input id="threadId" name="thread_id" value="refund-2026-001" required maxlength="100" />
+                <button type="button" class="icon-button" id="generateThread" title="Generate thread ID" aria-label="Generate thread ID">↻</button>
+              </div>
+
+              <label for="customerMessage">Customer Message</label>
+              <textarea id="customerMessage" name="message" rows="4" required maxlength="10000" placeholder="Describe the issue, order number and refund request…"></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submitSupport">
+                  <span>➤</span> Run support workflow <span>→</span>
+                </button>
+                <button type="button" class="btn btn-secondary" id="useSample">Use sample</button>
+              </div>
+              <p class="form-hint">Your request will be processed by the configured backend workflow.</p>
+            </form>
+
+            <div class="result-box hidden" id="supportResult" aria-live="polite">
+              <div class="result-heading">
+                <strong>Workflow Result</strong>
+                <span class="result-status" id="resultStatus">Completed</span>
+              </div>
+              <pre id="resultContent"></pre>
+              <button class="btn btn-secondary btn-small" id="copyResult">Copy result</button>
+            </div>
+          </article>
+
+          <article class="panel workflow-panel">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-title"><span class="heading-icon">◇</span> Workflow Steps</div>
+                <p>How the refund request is processed.</p>
+              </div>
+              <span class="endpoint-tag">LangGraph</span>
+            </div>
+            <ol class="workflow-steps">
+              <li><span class="step-number">1</span><div><strong>Customer request</strong><small>Receive support message</small></div></li>
+              <li><span class="step-number">2</span><div><strong>Intent classification</strong><small>Identify intent and order ID</small></div></li>
+              <li><span class="step-number">3</span><div><strong>Order lookup</strong><small>Retrieve matching order</small></div></li>
+              <li><span class="step-number">4</span><div><strong>Policy evaluation</strong><small>Evaluate eligibility and rules</small></div></li>
+              <li><span class="step-number">5</span><div><strong>Human approval</strong><small>Only when the workflow requests it</small></div></li>
+              <li><span class="step-number">6</span><div><strong>Final response</strong><small>Display the workflow result</small></div></li>
+            </ol>
+          </article>
+
+          <article class="panel review-panel" id="reviewPanel">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-title"><span class="heading-icon">◇</span> Human Review</div>
+                <p>Resume a request waiting for approval.</p>
+              </div>
+              <span class="endpoint-tag">POST /review/{thread_id}</span>
+            </div>
+            <form id="reviewForm">
+              <label for="reviewThreadId">Pending Thread ID</label>
+              <input id="reviewThreadId" name="thread_id" required placeholder="Enter the thread ID from a workflow result" />
+              <label for="reviewDecision">Review decision</label>
+              <select id="reviewDecision" name="decision">
+                <option value="approve">Approve request</option>
+                <option value="reject">Reject request</option>
+              </select>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitReview">Submit review →</button>
+              </div>
+            </form>
+            <div class="result-box hidden" id="reviewResult" aria-live="polite">
+              <strong>Review Result</strong>
+              <pre id="reviewResultContent"></pre>
+            </div>
+            <p class="form-hint">Use only for a thread that is actually waiting for review. Your backend determines the valid decision format.</p>
+          </article>
+
+          <article class="panel health-panel">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-title"><span class="heading-icon">⌁</span> System Health</div>
+                <p>Check backend connectivity and service status.</p>
+              </div>
+              <span class="status-pill"><i></i><span id="healthPill">Checking</span></span>
+            </div>
+            <div class="health-list">
+              <div><span>FastAPI service</span><strong id="fastApiHealth">Checking…</strong></div>
+              <div><span>Health endpoint</span><a href="/health" target="_blank" rel="noreferrer">/health ↗</a></div>
+              <div><span>Support workflow</span><span>POST /support</span></div>
+              <div><span>Swagger docs</span><a href="/docs" target="_blank" rel="noreferrer">/docs ↗</a></div>
+            </div>
+            <pre class="health-output" id="healthOutput">Checking backend status…</pre>
+            <button class="btn btn-secondary refresh-btn" id="refreshHealth">↻ Refresh API health</button>
+          </article>
+        </section>
+
+        <section class="panel history-panel" id="historyPanel">
+          <div class="panel-heading">
+            <div>
+              <div class="panel-title"><span class="heading-icon">◷</span> Recent Requests</div>
+              <p>Requests submitted during this browser session.</p>
+            </div>
+            <button class="btn btn-secondary btn-small" id="clearHistory">Clear session list</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>THREAD ID</th><th>STATUS</th><th>RESULT</th><th>TIME</th></tr>
+              </thead>
+              <tbody id="historyTable">
+                <tr class="empty-row"><td colspan="4">No requests submitted in this session yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="form-hint">This list is session-only. Persistent request history requires a backend history endpoint or database integration.</p>
+        </section>
+
+        <footer class="page-footer">
+          <span>RefundFlow AI</span><span>•</span><span>LangGraph</span><span>•</span><span>FastAPI</span><span>•</span><span>Support Operations</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
